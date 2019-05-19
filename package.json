@@ -1,0 +1,38 @@
+{
+  "name": "@auth/client",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "apollo-boost": "^0.3.1",
+    "apollo-link-context": "^1.0.17",
+    "formik": "^1.5.4",
+    "graphql": "^14.2.1",
+    "react": "^16.8.6",
+    "react-apollo-hooks": "^0.4.5",
+    "react-dom": "^16.8.6",
+    "react-facebook-login": "^4.1.1",
+    "react-google-login": "^5.0.4",
+    "react-router-dom": "^5.0.0",
+    "react-scripts": "2.1.8",
+    "react-twitter-auth": "^0.0.13",
+    "semantic-ui-react": "^0.86.0",
+    "serve": "^11.0.0",
+    "yup": "^0.27.0"
+  },
+  "scripts": {
+    "dev": "react-scripts start",
+    "start": "yarn run build && serve -s build",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ]
+}
