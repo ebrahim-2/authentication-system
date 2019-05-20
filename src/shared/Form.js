@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Form, Button, Divider } from 'semantic-ui-react';
 import { Formik, Field } from 'formik';
 import { Link } from 'react-router-dom';
@@ -18,6 +18,8 @@ const Frm = ({
   path = 'Register',
   history,
 }) => {
+  const [isLoading, setIsLoading] = useState(false);
+  
   return (
     <Formik
       initialValues={initialValues}
@@ -26,7 +28,7 @@ const Frm = ({
     >
       {props => {
         return (
-          <Form onSubmit={props.handleSubmit} loading={props.isSubmitting}>
+          <Form onSubmit={props.handleSubmit} loading={props.isSubmitting || isLoading}>
             {showUserName ? (
               <>
                 <ErrorMessageHandler field="name" />
@@ -53,8 +55,8 @@ const Frm = ({
                 <em>OR</em>
               </p>
             </Divider>
-            <GoogleAuth path={path} history={history} />
-            <FacebookAuth path={path} history={history} />
+            <GoogleAuth path={path} history={history} setIsLoading={setIsLoading}/>
+            <FacebookAuth path={path} history={history} setIsLoading={setIsLoading}/>
           </Form>
         );
       }}

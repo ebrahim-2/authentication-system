@@ -1,12 +1,12 @@
-import React from 'react';
-import FacebookLogin from 'react-facebook-login/dist/facebook-login-render-props';
-import { useMutation } from 'react-apollo-hooks';
+import React from "react";
+import FacebookLogin from "react-facebook-login/dist/facebook-login-render-props";
+import { useMutation } from "react-apollo-hooks";
 
-import { LOGIN_OR_REGISTER_WITH_FACEBOOK } from './mutations';
-import { CURRENT_USER } from './queries';
-import { Icon } from 'semantic-ui-react';
+import { LOGIN_OR_REGISTER_WITH_FACEBOOK } from "./mutations";
+import { CURRENT_USER } from "./queries";
+import { Icon } from "semantic-ui-react";
 
-const FacebookAuth = ({ path, history }) => {
+const FacebookAuth = ({ path, history, setIsLoading }) => {
   const loginOrRegisterWithFacebook = useMutation(
     LOGIN_OR_REGISTER_WITH_FACEBOOK
   );
@@ -16,22 +16,22 @@ const FacebookAuth = ({ path, history }) => {
         variables: {
           data: {
             name,
-            facebookId: userID,
-          },
+            facebookId: userID
+          }
         },
         update: (cache, { data }) => {
           cache.writeQuery({
             query: CURRENT_USER,
             data: {
-              me: data.authFacebook.user,
-            },
+              me: data.authFacebook.user
+            }
           });
-        },
+        }
       });
-      localStorage.setItem('token', data.authFacebook.token);
-      history.push('/secret');
+      localStorage.setItem("token", data.authFacebook.token);
+      history.push("/secret");
     } catch (error) {
-      console.log(error);
+      setIsLoading(false);
     }
   };
 
@@ -43,7 +43,10 @@ const FacebookAuth = ({ path, history }) => {
       callback={facebookResponse}
       render={renderProps => (
         <button
-          onClick={renderProps.onClick}
+          onClick={() => {
+            setIsLoading(true);
+            renderProps.onClick();
+          }}
           disabled={renderProps.disabled}
           className="ui facebook right floated labeled icon button"
           type="button"

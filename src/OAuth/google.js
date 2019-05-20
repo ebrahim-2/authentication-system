@@ -6,7 +6,7 @@ import { Icon } from 'semantic-ui-react';
 import { CURRENT_USER } from './queries';
 import { LOGIN_OR_REGISTER_WITH_GOOGLE } from './mutations';
 
-const GoogleAuth = ({ path, history }) => {
+const GoogleAuth = ({ path, history, setIsLoading }) => {
   const loginOrRegisterWithGoogle = useMutation(
    LOGIN_OR_REGISTER_WITH_GOOGLE
   );
@@ -32,7 +32,7 @@ const GoogleAuth = ({ path, history }) => {
       localStorage.setItem('token', data.authGoogle.token);
       history.push('/secret');
     } catch (error) {
-      console.log(error);
+      setIsLoading(false);
     }
   };
   return (
@@ -42,9 +42,13 @@ const GoogleAuth = ({ path, history }) => {
       onFailure={responseGoogle}
       render={renderProps => (
         <button
-          onClick={renderProps.onClick}
+          onClick={()=> {
+            setIsLoading(true)
+            renderProps.onClick()
+          }}
           disabled={renderProps.disabled}
           className="ui google plus labeled icon button"
+          type="button"
         >
 
           <Icon name="google" /> {path} With Google
