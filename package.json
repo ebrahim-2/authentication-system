@@ -14,14 +14,14 @@
     "react-google-login": "^5.0.4",
     "react-router-dom": "^5.0.0",
     "react-scripts": "2.1.8",
-    "react-twitter-auth": "^0.0.13",
     "semantic-ui-react": "^0.86.0",
     "serve": "^11.0.0",
     "yup": "^0.27.0"
   },
   "scripts": {
     "dev": "react-scripts start",
-    "start": "yarn run build && serve -s build",
+    "start": "serve -s build",
+    "heroku-postbuild": "npm run build",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
