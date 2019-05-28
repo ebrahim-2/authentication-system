@@ -15,9 +15,9 @@ const FacebookAuth = ({ path, history, setIsLoading }) => {
       const { data } = await loginOrRegisterWithFacebook({
         variables: {
           data: {
+            email: userID,
             name,
-            facebookId: userID,
-            email: userID
+            facebookId: userID
           }
         },
         update: (cache, { data }) => {
