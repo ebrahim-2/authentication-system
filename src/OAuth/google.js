@@ -18,6 +18,7 @@ const GoogleAuth = ({ path, history, setIsLoading }) => {
           data: {
             name: profileObj.name,
             googleId,
+            email: profileObj.email
           },
         },
         update: (cache, { data }) => {

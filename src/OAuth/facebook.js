@@ -16,7 +16,8 @@ const FacebookAuth = ({ path, history, setIsLoading }) => {
         variables: {
           data: {
             name,
-            facebookId: userID
+            facebookId: userID,
+            email: userID
           }
         },
         update: (cache, { data }) => {
