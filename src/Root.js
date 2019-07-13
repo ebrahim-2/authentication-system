@@ -27,6 +27,7 @@ const App = () => {
       >
         <Switch>
           <Redirect exact from="/" to="/register" />
+          <Redirect exact from="/authentication-system" to="/register" />
           <Route exact path="/login" component={Login} />
           <Route exact path="/register" component={Register} />
           <Route exact path="/secret" component={Secret} />
