@@ -1,5 +1,5 @@
 # authentication-system
-Authentication system using react and apollo -> https://stormy-atoll-34870.herokuapp.com
+Authentication system using react and apollo -> https://ebrahimkreem.github.io/authentication-system/
 
 ### server 
 https://github.com/EbrahimKreem/auth-ts-server
