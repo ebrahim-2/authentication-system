@@ -2,3 +2,28 @@
   max-width: 600px;
   margin: 90px auto;
 }
+.portal {
+  left: 80%;
+  position: fixed !important;
+  top: 10%;
+  margin-right: 20px !important;
+  z-index: 1000;
+}
+@media only screen and (max-width: 600px) {
+  .ui.google.plus.button,
+  .ui.facebook.button {
+    width: 100%;
+  }
+  .ui.facebook.button {
+    margin-top: 10px;
+  }
+  .ui.stacked.segment {
+    padding-bottom: 4.3em;
+    margin: 5px 15px;
+  }
+
+  .portal {
+    left: 7%;
+    top: 8%;
+  }
+}
