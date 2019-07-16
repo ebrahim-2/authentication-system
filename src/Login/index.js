@@ -21,7 +21,7 @@ const Login = props => {
   const loginUser = useMutation(LOGIN);
 
   useEffect(() => {
-    if (localStorage.getItem('token')) props.history.push('/secret');
+    if (localStorage.getItem('token')) props.history.push('/authentication-system/secret');
   }, []);
 
   const onSubmit = async (values, actions) => {
@@ -38,7 +38,7 @@ const Login = props => {
         },
       });
       localStorage.setItem('token', data.login.token);
-      props.history.push('/secret');
+      props.history.push('/authentication-system/secret');
     } catch (error) {
       const msg = error.message.split(':')[1];
       const isEmailError = msg.toLowerCase().includes('email');

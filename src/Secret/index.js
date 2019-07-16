@@ -6,7 +6,7 @@ import { CURRENT_USER } from './queries';
 
 const Secret = props => {
   useEffect(() => {
-    if (!localStorage.getItem('token')) props.history.push('/register');
+    if (!localStorage.getItem('token')) props.history.push('/authentication-system/register');
   }, []);
 
   const { data, loading } = useQuery(CURRENT_USER);

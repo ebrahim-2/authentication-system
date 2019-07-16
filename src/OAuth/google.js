@@ -31,7 +31,7 @@ const GoogleAuth = ({ path, history, setIsLoading }) => {
         },
       });
       localStorage.setItem('token', data.authGoogle.token);
-      history.push('/secret');
+      history.push('/authentication-system/secret');
     } catch (error) {
       setIsLoading(false);
     }

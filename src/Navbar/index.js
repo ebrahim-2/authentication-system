@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 const Navbar = props => {
   const handleLogoutClick = () => {
     localStorage.removeItem('token');
-    props.history.push('/register');
+    props.history.push('/authentication-system/register');
   };
 
   return (
@@ -14,10 +14,10 @@ const Navbar = props => {
         <Menu.Menu position="right">
           {!localStorage.getItem('token') ? (
             <>
-              <Menu.Item as={Link} to="/login">
+              <Menu.Item as={Link} to="/authentication-system/login">
                 Login
               </Menu.Item>
-              <Menu.Item as={Link} to="/register">
+              <Menu.Item as={Link} to="/authentication-system/register">
                 Register
               </Menu.Item>
             </>

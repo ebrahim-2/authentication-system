@@ -8,7 +8,7 @@ const Register = lazy(() => import("Register"));
 const Secret = lazy(() => import("Secret"));
 const ForgotPassword = lazy(() => import("Forgot-Password"));
 const NotFound = lazy(() => import("Notfound"));
-const ChangePassword = lazy(() => import("Change-Password"));
+const ChangePassword = lazy(() => import("./Change-Password"));
 
 const App = () => {
   return (
@@ -26,13 +26,12 @@ const App = () => {
         }
       >
         <Switch>
-          <Redirect exact from="/" to="/register" />
-          <Redirect exact from="/authentication-system" to="/register" />
-          <Route exact path="/login" component={Login} />
-          <Route exact path="/register" component={Register} />
-          <Route exact path="/secret" component={Secret} />
-          <Route exact path="/forgot-password" component={ForgotPassword} />
-          <Route exact path="/reset/:token" component={ChangePassword} />
+          <Redirect exact from="/authentication-system" to="/authentication-system/register" />
+          <Route exact path="/authentication-system/login" component={Login} />
+          <Route exact path="/authentication-system/register" component={Register} />
+          <Route exact path="/authentication-system/secret" component={Secret} />
+          <Route exact path="/authentication-system/forgot-password" component={ForgotPassword} />
+          <Route exact path="/authentication-system/reset/:token" component={ChangePassword} />
           <Route component={NotFound} />
         </Switch>
       </Suspense>

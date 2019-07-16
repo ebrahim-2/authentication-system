@@ -25,7 +25,7 @@ const Register = props => {
   const addNewUser = useMutation(REGISTER);
 
   useEffect(() => {
-    if (localStorage.getItem('token')) props.history.push('/secret');
+    if (localStorage.getItem('token')) props.history.push('/authentication-system/secret');
   }, []);
 
   const onSubmit = async (values, actions) => {
@@ -42,7 +42,7 @@ const Register = props => {
         },
       });
       localStorage.setItem('token', data.register.token);
-      props.history.push('/secret');
+      props.history.push('/authentication-system/secret');
     } catch (error) {
       actions.setFieldError('email', 'Email is in use please try another one');
       actions.setSubmitting(false);

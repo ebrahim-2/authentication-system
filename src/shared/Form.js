@@ -41,7 +41,7 @@ const Frm = ({
             <Password />
             {showForgotPasswordLink ? (
               <Link
-                to="/forgot-password"
+                to="/authentication-system/forgot-password"
                 style={{ float: 'right', paddingTop: 9 }}
               >
                 Forgot Password?

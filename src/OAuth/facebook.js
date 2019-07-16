@@ -30,7 +30,7 @@ const FacebookAuth = ({ path, history, setIsLoading }) => {
         }
       });
       localStorage.setItem("token", data.authFacebook.token);
-      history.push("/secret");
+      history.push("/authentication-system/secret");
     } catch (error) {
       setIsLoading(false);
     }
