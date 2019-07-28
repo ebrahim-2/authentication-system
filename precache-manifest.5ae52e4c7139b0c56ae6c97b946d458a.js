@@ -16,8 +16,8 @@ self.__precacheManifest = [
     "url": "/authentication-system/static/js/11.9e1ea46b.chunk.js"
   },
   {
-    "revision": "70f74260ac9c26dae394",
-    "url": "/authentication-system/static/js/main.5ac1ce93.chunk.js"
+    "revision": "545e9c3f652e1a84357d",
+    "url": "/authentication-system/static/js/main.c146070f.chunk.js"
   },
   {
     "revision": "2fb41614c12336d97ee1",
@@ -48,11 +48,11 @@ self.__precacheManifest = [
     "url": "/authentication-system/static/js/10.c161b9be.chunk.js"
   },
   {
-    "revision": "70f74260ac9c26dae394",
+    "revision": "545e9c3f652e1a84357d",
     "url": "/authentication-system/static/css/main.11e03424.chunk.css"
   },
   {
-    "revision": "89b0b8c6e01888f01d29fa1cc7ce7b2d",
+    "revision": "7751535b1e845337890199298e128ca5",
     "url": "/authentication-system/index.html"
   }
 ];
