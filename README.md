@@ -1,5 +1,5 @@
 # authentication-system
-Authentication system using react and apollo -> https://ebrahimkreem.github.io/authentication-system/
+Authentication system using react and apollo
 
 ### server 
 https://github.com/EbrahimKreem/auth-ts-server
